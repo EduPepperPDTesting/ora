@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="{%  static "jplot/excanvas.js" %}"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="{%  static "jplot/jquery.js" %}"></script>
+<script language="javascript" type="text/javascript" src="{%  static "jplot/jquery.jqplot.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{%  static "jplot/jquery.jqplot.css" %}"/>
+
+<script type="text/javascript" src="{%  static "jplot/plugins/jqplot.barRenderer.min.js" %}"></script>
+<script type="text/javascript" src="{%  static "jplot/plugins/jqplot.categoryAxisRenderer.min.js" %}"></script>
+<script type="text/javascript" src="{%  static "jplot/plugins/jqplot.canvasAxisLabelRenderer.min.js" %}"></script>
+<script type="text/javascript" src="{%  static "jplot/plugins/jqplot.pointLabels.min.js" %}"></script>
+<script type="text/javascript" src="{%  static "jplot/plugins/jqplot.highlighter.min.js" %}"></script>
+<script type="text/javascript" src="{%  static "jplot/plugins/jqplot.cursor.min.js" %}"></script>
+
+{% for code in plot_list %}
+    {{code|safe}}
+{% endfor %}
+
+</body>
+</html>
