@@ -74,29 +74,16 @@ COURSE_DATA_PATH = os.path.join(REPO_PATH, "data/course/")
 #SQLite settings
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'essaydb', # Or path to database file if using sqlite3.
-        'USER': '', # Not used with sqlite3.
-        'PASSWORD': '', # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '', # Set to empty string for default. Not used with sqlite3.
-    }
-}
-
-
-DATABASES = {
-    'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'essay',
-        'USER': 'pepper',
-        'PASSWORD': 'lebbeb',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
+        'NAME': os.environ["ESSAY_DB_NAME"],
+        'USER': os.environ["ESSAY_DB_USER"],
+        'PASSWORD': os.environ["ESSAY_DB_PASSWORD"],
+        'HOST': os.environ["ESSAY_DB_HOST"],
+        'PORT': os.environ["ESSAY_DB_PORT"],
 }
 
 XQUEUE_INTERFACE = {
-    "url": "http://127.0.0.1:3032",
+    "url": os.environ["XQUEUE_URL"],
     "django_auth": {
         "username": "lms",
         "password": "abcd"
@@ -105,7 +92,7 @@ XQUEUE_INTERFACE = {
 }
 
 GRADING_CONTROLLER_INTERFACE = {
-    "url": "http://127.0.0.1:3033",
+    "url": os.environ["GRADING_CONTROLLER_INTERFACE_URL"],
     "django_auth": {
         "username": "xqueue_pull",
         "password": "abcd",
