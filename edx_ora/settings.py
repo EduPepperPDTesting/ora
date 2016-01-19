@@ -80,6 +80,7 @@ DATABASES = {
         'PASSWORD': os.environ["ESSAY_DB_PASSWORD"],
         'HOST': os.environ["ESSAY_DB_HOST"],
         'PORT': os.environ["ESSAY_DB_PORT"],
+        }
 }
 
 XQUEUE_INTERFACE = {
